@@ -1,23 +1,57 @@
-<html> Defines the root of an HTML document </html>
-<title>	Defines a title for the document </title>
-<header> Defines a header for a document or section </header>
-<main> Specifies the main content of a document </main>
-<footer> Defines a footer for a document or section </footer>
-<p>	Defines a paragraph </p>
-<a>	Defines a hyperlink </a>
-<b> Defines bold text </b>
-<br> Defines a single line break </br>
-<button> Defines a clickable button </button>
-<div> Defines a section in a document </div>
-<footer> Defines a footer for a document or section </footer>
-<h1> to <h6> Defines HTML headings </h1> to </h6>
-<img> Defines an image </img>
-<ol> Defines an ordered list </ol>
-<ul> Defines an unordered list </ul>
-<li> Defines a list item  </li>
-<script> Defines a client-side script </script>
-<span> Defines a section in a document</span>
-<table>	Defines a table </table>
-<td> Defines a cell in a table</td>
-<th> Defines a header cell in a table </th>
-<tr> Defines a row in a table </tr>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swami Vivekanand NGO</title>
+    <link rel="stylesheet" href="css/Style.css">
+</head>
+<body class="body" style="display: flex;flex-direction: column;">
+    <div class="header">
+        <div class="logo">
+            <img class="logoImage" src="images/Swami-Vivekananda.jpg" alt="logo"> </img>
+        </div>
+        <div class="headerText">
+            <h1 class="headerTextText">Swami Vivekanand NGO</h1>
+        </div>
+        <div class="contact">
+            <span>Email-id: shelkeva@gmail.com</span>
+            <span>Mobile: +91-8180927857</span>
+        </div>
+    </div>
+    <hr style="color: black;">
+    <div class="indexPlusInfo" style="display: flex; justify-content: space-between;padding-left: 2%;padding-top: 3%;padding-right: 2%;">
+        <div class="index">
+            <ul><li style="cursor: pointer;" onclick="getMainPage()">Introduction</li></ul>
+            <ul><li style="cursor: pointer;" onclick="getIntro()">About Us</li></ul>
+            <ul><li style="cursor: pointer;" onclick="getRaviIntro()">Ravi</li></ul>
+            <ul><li style="cursor: pointer;" onclick="getVishnuIntro()">Vishnu</li></ul>
+            <ul><li style="cursor: pointer;" onclick="getAbhiIntro()">Abhi</li></ul>
+        </div>
+        <div class="info">
+            <script>
+                function getIntro(){
+                    document.getElementById("intro").innerHTML = "Hello Dear Visitor!</br> We are happy that you've chosen our website to learn programming languages. We're sure you'll become one of the best programmers in your country. Good luck to you!";
+                }
+                function getRaviIntro(){
+                    document.getElementById("intro").innerHTML = "This is Ravi's Page. Good luck to you!";
+                }
+                function getVishnuIntro(){
+                    document.getElementById("intro").innerHTML = "This is Vishnu's Page. Good luck to you!";
+                }
+                function getAbhiIntro(){
+                    document.getElementById("intro").innerHTML = "This is Abhi's Page. Good luck to you!";
+                }
+                function getMainPage(){
+                    document.getElementById("intro").innerHTML = "Thank you for visiting our website!!!!!";
+                }
+            </script>
+            <div style="display: flex; flex-direction: column;">
+                <p id="intro">
+                    Thank you for visiting our website!!!!!
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

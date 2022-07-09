@@ -1,0 +1,133 @@
+.header{
+    width: 100%;
+    height: 120px;
+    background-color: rgb(152, 223, 223);
+    color: white;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.logo{
+    display: flex;
+    justify-content: flex-start;
+}
+.headerText{
+    display: flex;
+    text-align: center;
+    width: 100%;
+    text-align: center;
+}
+.headerTextText{
+    color: black; font-size: 40px;width: 100%; align-self: center;
+}
+.logoImage{
+    width: 100px;height: 100px;align-self: center;padding-left: 15px;
+}
+.contact{
+    display: flex;flex-direction: column; width: 350px;text-align: left;align-self: center;color: black;
+}
+
+.info{
+    width: 80%;
+}
+.index{
+    width: 15%;border-style: solid;height: fit-content;
+}
+
+@media screen and (max-width:1024px) {
+    .headerText{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:676px){
+    .body{
+        font-size: 8px;
+    }
+    .header{
+        display: flex;
+        height: 72px;
+        justify-content: space-between;
+
+    }
+    .logo {
+        display: flex;
+        align-self: center;
+        width: 25px;
+        height: 25px;
+    }
+    .logoImage{
+        width: 25px;
+        height: 25px;
+        padding-left: 5px;
+    }
+    .headerText{
+        font-size: 15px;
+
+    }
+    .headerTextText{
+        color: black;
+        font-size: 8px;
+        width: 100%;
+        align-self: center;
+    }
+    .contact{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        align-self: center;
+        color: black;
+        font-size: 8px;
+        width: 225px;
+    }
+    .indexLink{
+        margin: 0px;
+        padding:0px;
+    }
+    .index{
+        width: 30%;border-style: solid;height: fit-content;
+    }
+    .info{
+        width: 65%;
+    }
+}
+
+@media screen and (max-width:888px) and (min-width:677px){
+    .body{
+        font-size: 12px;
+    }
+    .header{
+        display: flex;
+    }
+    .logo {
+        display: flex;
+        align-self: center;
+        width: 25px;
+        height: 25px;
+    }
+    .logoImage{
+        width: 40px;
+        height: 40px;
+    }
+    .headerText{
+        font-size: 20px;
+
+    }
+    .headerTextText{
+        color: black;
+        font-size: 20px;
+        width: 100%;
+        align-self: center;
+    }
+    .contact{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        align-self: center;
+        color: black;
+        font-size: 13px;
+    }
+}
