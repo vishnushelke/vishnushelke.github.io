@@ -1,201 +1,331 @@
-.header{
-    width: 100%;
-    height: 120px;
-    background-color: rgb(152, 223, 223);
-    color: white;
-    margin: 0px auto;
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    justify-content: space-between;
-    position: fixed;
-    top: 0;
-    right: 0;
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  align-self: center;
+  /* position: fixed; */
+  padding-top: 60px;
+  /* margin: auto; */
 }
 
-.footer{
-    width: 100%;
-    height: 23px;
-    background-color: rgb(226, 158, 126);
-    color: white;
-    margin: 0px auto;
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    justify-content: space-between;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    align-items: center;
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 150px;
+  padding-top: 50%;
+  width: auto;
+  /* margin-top: -22px; */
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(238, 230, 230, 0.473);
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 10;
+  border-radius: 3px 0 0 3px;
+}
+.prev{
+    left: 10;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f00d0d;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #0a0a0a;
+  font-size: 10px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 45px;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.header {
+  width: 100%;
+  height: 33px;
+  background-color: rgb(152, 223, 223);
+  color: white;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.footer {
+  width: 100%;
+  height: 23px;
+  background-color: rgb(226, 158, 126);
+  color: white;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  align-items: center;
 }
 .button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 2px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.footerAddress {
+  color: black;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5px;
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+}
+.headerText {
+  display: flex;
+  text-align: center;
+  /* width: 100%; */
+  text-align: center;
+}
+.headerTextText {
+  color: black;
+  font-size: 20px;
+  /* width: 100%; */
+  align-self: center;
+}
+.logoImage {
+  align-self: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  padding-left: 15px;
+}
+.contact {
+  padding-right: 1%;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  /* width: 250px; */
+  text-align: left;
+  align-self: center;
+  color: black;
+}
+
+.info {
+  width: 100%;
+  padding-bottom: 30px;
+}
+.index {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  position: fixed;
+  top: 33px;
+  left: 0;
+  background-color: #4caf50;
+}
+
+@media screen and (max-width: 1024px) {
+  .headerText {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 676px) {
+  .body {
+    font-size: 8px;
+  }
+  .header {
+    display: flex;
+    height: 20px;
+    justify-content: space-between;
+  }
+  .button {
+    padding: 2px 2px;
+    font-size: 6px;
+  }
+  .footer {
+    display: flex;
+    padding: 5px;
+    height: 5px;
+    justify-content: space-between;
+  }
+  .logo {
+    display: flex;
+    align-self: center;
+    width: 25px;
+    height: 25px;
+  }
+  .logoImage {
+    width: 20px;
+    height: 20px;
+    padding-left: 5px;
+  }
+  /* .headerText {
+    font-size: 15px;
+  } */
+  .headerTextText {
+    color: black;
+    font-size: 8px;
+    /* width: 100%; */
+    /* align-self: center; */
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-self: center;
+    color: black;
+    font-size: 8px;
+    /* width: 184px; */
+  }
+  .indexLink {
+    margin: 0px;
+    padding: 0px;
+  }
+  .index {
+    justify-content: space-around;
+    height: fit-content;
+    position: fixed;
+    top: 20px;
+    left: 0;
   }
 
-.footerAddress{
+  .slideshow-container {
+    max-width: 100%;
+    align-self: center;
+    /* position: fixed; */
+    padding-top: 30px;
+    /* margin: auto; */
+  }
+  .prev,
+  .next {
+    position: absolute;
+    top: 60px;
+    padding: 5px;
+    font-size: 5px;
+  }
+  .numbertext {
+    position: absolute;
+    top: 23px;
+    font-size: 7px;
+  }
+}
+
+@media screen and (max-width: 888px) and (min-width: 677px) {
+  .body {
+    font-size: 12px;
+  }
+  .header {
+    display: flex;
+    height: 33px;
+  }
+  .button {
+    padding: 3px 10px;
+    font-size: 10px;
+  }
+  .index {
+    top: 30px;
+  }
+  /* .info {
+    padding-top: 50px;
+  } */
+  .logo {
+    display: flex;
+    align-self: center;
+    width: 30px;
+    height: 30px;
+  }
+  .logoImage {
+    width: 30px;
+    height: 30px;
+  }
+  .headerText {
+    font-size: 20px;
+  }
+  .headerTextText {
     color: black;
+    font-size: 20px;
     width: 100%;
+    align-self: center;
+  }
+  .contact {
     display: flex;
-    justify-content: flex-end;
-    padding-right: 5px;
-}
-
-.logo{
-    display: flex;
-    justify-content: flex-start;
-}
-.headerText{
-    display: flex;
-    text-align: center;
-    width: 100%;
-    text-align: center;
-}
-.headerTextText{
-    color: black; font-size: 40px;width: 100%; align-self: center;
-}
-.logoImage{
-    width: 100px;height: 100px;align-self: center;padding-left: 15px;
-}
-.contact{
-    display: flex;flex-direction: column; width: 350px;text-align: left;align-self: center;color: black;
-}
-
-.info{
-    width: 100%;
-    padding-top: 110px;
-    padding-bottom: 30px;
-}
-.index{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    position: fixed;
-    top: 120px;
-    left: 0;
-    background-color: #4CAF50;
-}
-
-@media screen and (max-width:1024px) {
-    .headerText{
-        font-size: 20px;
-    }
-}
-
-@media screen and (max-width:676px){
-    .body{
-        font-size: 8px;
-    }
-    .header{
-        display: flex;
-        height: 32px;
-        justify-content: space-between;
-
-    }
-    .button{
-        padding: 2px 2px;
-        font-size: 6px;
-    }
-    .footer{
-        display: flex;
-        padding: 5px;
-        height: 5px;
-        justify-content: space-between;
-    }
-    .logo {
-        display: flex;
-        align-self: center;
-        width: 25px;
-        height: 25px;
-    }
-    .logoImage{
-        width: 25px;
-        height: 25px;
-        padding-left: 5px;
-    }
-    .headerText{
-        font-size: 15px;
-
-    }
-    .headerTextText{
-        color: black;
-        font-size: 8px;
-        width: 100%;
-        align-self: center;
-    }
-    .contact{
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        align-self: center;
-        color: black;
-        font-size: 8px;
-        width: 184px;
-    }
-    .indexLink{
-        margin: 0px;
-        padding:0px;
-    }
-    .index{
-        width: 100%;height: fit-content;position: fixed;top: 32px; left: 0;
-    }
-    .info{
-        width: 100%;
-        padding-top: 10px;
-    }
-}
-
-@media screen and (max-width:888px) and (min-width:677px){
-    .body{
-        font-size: 12px;
-    }
-    .header{
-        display: flex;
-        height: 65px;
-    }
-    .button{
-        padding: 6px 6px;
-        font-size: 15px;
-    }
-    .index{
-        top: 65px;
-    }
-    .info{
-        padding-top: 50px;
-    }
-    .logo {
-        display: flex;
-        align-self: center;
-        width: 25px;
-        height: 25px;
-    }
-    .logoImage{
-        width: 40px;
-        height: 40px;
-    }
-    .headerText{
-        font-size: 20px;
-
-    }
-    .headerTextText{
-        color: black;
-        font-size: 20px;
-        width: 100%;
-        align-self: center;
-    }
-    .contact{
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        align-self: center;
-        color: black;
-        font-size: 13px;
-    }
+    flex-direction: column;
+    text-align: left;
+    align-self: center;
+    color: black;
+    font-size: 13px;
+  }
 }
