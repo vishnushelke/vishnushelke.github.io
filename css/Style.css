@@ -9,6 +9,9 @@ html{
   padding-top: 60px;
   /* margin: auto; */
 }
+dotsClass{
+  text-align:center
+}
 .image {
   width: 40%;
   align-self: center;
@@ -69,7 +72,7 @@ html{
   margin: 0 2px;
   background-color: #bbb;
   border-radius: 50%;
-  display: inline-block;
+  /* display: inline-block; */
   transition: background-color 0.6s ease;
 }
 
@@ -179,10 +182,12 @@ html{
 }
 
 .info {
-  width: 100%;
+  width: 90%;
   padding-bottom: 30px;
   color: rgb(0, 0, 0);
   font-size: larger;
+  display: flex;
+  justify-content: center;
 }
 .index {
   width: 100%;

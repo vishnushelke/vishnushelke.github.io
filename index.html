@@ -19,8 +19,12 @@
             <span>Mobile: +91-8180927857</span>
         </div>
     </div>
+
     <!-- Slideshow container -->
-<div class="slideshow-container">
+    <div class="mainImage" style="display: flex;justify-content: center; padding-top: 60px;width: 100%;">
+      <img src="images/vivekananda.jpg" alt="vivekananda">
+    </div>
+  <div class="slideshow-container">
 
     <!-- Full-width images with number and caption text -->
     <div class="mySlides fade" style="display: flex; justify-content: center;">
@@ -37,16 +41,21 @@
       <div class="numbertext">3 / 3</div>
       <img class="image" src="images/img3.jpg" onclick="getImageText(3)">
     </div>
-  
+
     <!-- Next and previous buttons -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div class="prevArrow">
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    </div>
+    <div class="nextArrow">
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>   
   </div>
   
   <!--Javascript code to control the slideshow-->
   <script>
     let slideIndex = 1;
-showSlides(slideIndex);
+    let displayWork = false;
+    showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
@@ -57,40 +66,89 @@ function plusSlides(n) {
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
+function renderWork(){
+  displayWork = true;
+  showSlides(slideIndex);
+}
+function hideWork(){
+  displayWork = false;
+  showSlides(slideIndex);
+}
 
 function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    let dotClass = document.getElementsByClassName("dotsClass");
+    let prevArrow = document.getElementsByClassName("prevArrow");
+    let nextArrow = document.getElementsByClassName("nextArrow");
+    let mainImage = document.getElementsByClassName("mainImage");
+  if(displayWork === true){
+    for (i = 0; i < dotClass.length; i++) {
+      dotClass[i].style.display = "flex";
+      dotClass[i].style.justifyContent = "center"
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].style.display = "inline-block";
+      dots[i].style.alignSelf = "center"
+    }
+    for (i = 0; i < prevArrow.length; i++) {
+      prevArrow[i].style.display = "block";
+    }
+    for (i = 0; i < nextArrow.length; i++) {
+      nextArrow[i].style.display = "block";
+    }
+    for (i = 0; i < mainImage.length; i++) {
+      mainImage[i].style.display = "none";
+    }
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "flex";
+    dots[slideIndex-1].className += " active";
+    getImageText(slideIndex);
+  }else{
+    // hiding all contents which should be rendered after client hits show work button
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dotClass.length; i++) {
+      dotClass[i].style.display = "none";
+    }
+    for (i = 0; i < prevArrow.length; i++) {
+      prevArrow[i].style.display = "none";
+    }
+    for (i = 0; i < nextArrow.length; i++) {
+      nextArrow[i].style.display = "none";
+    }
+    for (i = 0; i < mainImage.length; i++) {
+      mainImage[i].style.display = "flex";
+    }
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "flex";
-  dots[slideIndex-1].className += " active";
-  getImageText(slideIndex);
 }
   </script>
   <br>
   
   <!-- The dots/circles -->
-  <div style="text-align:center">
+  <div class="dotsClass">
     <span class="dot" onclick="currentSlide(1)"></span>
     <span class="dot" onclick="currentSlide(2)"></span>
     <span class="dot" onclick="currentSlide(3)"></span>
   </div>
     <hr style="color: black;">
-    <div class="indexPlusInfo" style="display: flex; justify-content: space-between;padding-left: 2%;padding-top: 3%;padding-right: 2%;flex-direction: column;">
+    <div class="indexPlusInfo" style="display: flex;align-items:center;padding-left: 2%;padding-right: 2%;flex-direction: column;">
         <div class="index">
             <button class="button" onclick="getMainPage()">Introduction</button>
             <button class="button" onclick="getIntro()">About Us</button>
             <button class="button" onclick="getRaviIntro()">Ravi</button>
             <button class="button" onclick="getVishnuIntro()">Vishnu</button>
             <button class="button" onclick="getAbhiIntro()">Abhi</button>
+            <button class="button" onclick="renderWork()">Work</button>
         </div>
         <div class="info">
             <script>
@@ -104,17 +162,21 @@ function showSlides(n) {
                 }                
               }
                 function getIntro(){
+                  hideWork();
                     document.getElementById("intro").innerHTML = `By 55,000 years ago, the first modern humans, or Homo sapiens, had arrived on the Indian subcontinent from Africa, where they had earlier evolved.[27][28][29] The earliest known modern human remains in South Asia date to about 30,000 years ago.[27] After 6500 BCE, evidence for domestication of food crops and animals, construction of permanent structures, and storage of agricultural surplus appeared in Mehrgarh and other sites in what is now Balochistan, Pakistan.[82] These gradually developed into the Indus Valley civilisation,[83][82] the first urban culture in South Asia,[84] which flourished during 2500–1900 BCE in what is now Pakistan and western India.[85] Centred around cities such as Mohenjo-daro, Harappa, Dholavira, and Kalibangan, and relying on varied forms of subsistence, the civilisation engaged robustly in crafts production and wide-ranging trade.[84]
 </br> During the period 2000–500 BCE, many regions of the subcontinent transitioned from the Chalcolithic cultures to the Iron Age ones.[86] The Vedas, the oldest scriptures associated with Hinduism,[87] were composed during this period,[88] and historians have analysed these to posit a Vedic culture in the Punjab region and the upper Gangetic Plain.[86] Most historians also consider this period to have encompassed several waves of Indo-Aryan migration into the subcontinent from the north-west.[87] The caste system, which created a hierarchy of priests, warriors, and free peasants, but which excluded indigenous peoples by labelling their occupations impure, arose during this period.[89] On the Deccan Plateau, archaeological evidence from this period suggests the existence of a chiefdom stage of political organisation.[86] In South India, a progression to sedentary life is indicated by the large number of megalithic monuments dating from this period,[90] as well as by nearby traces of agriculture, irrigation tanks, and craft traditions.[90]
 </br>We are happy that you've chosen our website to learn programming languages. We're sure you'll become one of the best programmers in your country. Good luck to you!`;
                 }
                 function getRaviIntro(){
+                  hideWork();
                     document.getElementById("intro").innerHTML = "This is Ravi's Page. Good luck to you!";
                 }
                 function getVishnuIntro(){
+                  hideWork();
                     document.getElementById("intro").innerHTML = "This is Vishnu's Page. Good luck to you!";
                 }
                 function getAbhiIntro(){
+                  hideWork();
                     document.getElementById("intro").innerHTML = `Early life (1863–1888)
                             A Bengali woman, sitting
                             Bhubaneswari Devi (1841–1911); "I am indebted to my mother for the efflorescence of my knowledge."[17] – Vivekananda<br />
@@ -294,6 +356,7 @@ function showSlides(n) {
                             Bartaman Bharat meaning "Present Day India"[222] is an erudite Bengali language essay written by him, which was first published in the March 1899 issue of Udbodhan, the only Bengali language magazine of Ramakrishna Math and Ramakrishna Mission. The essay was reprinted as a book in 1905 and later compiled into the fourth volume of The Complete Works of Swami Vivekananda.[223] [224]In this essay his refrain to the readers was to honour and treat every Indian as a brother irrespective of whether he was born poor or in lower caste.[225]`;
                 }
                 function getMainPage(){
+                  hideWork();
                     document.getElementById("intro").innerHTML = `Cave 26 of the rock-cut Ajanta Caves
 In the late Vedic period, around the 6th century BCE, the small states and chiefdoms of the Ganges Plain and the north-western regions had consolidated into 16 major oligarchies and monarchies that were known as the mahajanapadas.[91][92] The emerging urbanisation gave rise to non-Vedic religious movements, two of which became independent religions. Jainism came into prominence during the life of its exemplar, Mahavira.[93] Buddhism, based on the teachings of Gautama Buddha, attracted followers from all social classes excepting the middle class; chronicling the life of the Buddha was central to the beginnings of recorded history in India.[94][95][96] In an age of increasing urban wealth, both religions held up renunciation as an ideal,[97] and both established long-lasting monastic traditions. Politically, by the 3rd century BCE, the kingdom of Magadha had annexed or reduced other states to emerge as the Mauryan Empire.[98] The empire was once thought to have controlled most of the subcontinent except the far south, but its core regions are now thought to have been separated by large autonomous areas.[99][100] The Mauryan kings are known as much for their empire-building and determined management of public life as for Ashoka's renunciation of militarism and far-flung advocacy of the Buddhist dhamma.[101][102]</br>
 The Sangam literature of the Tamil language reveals that, between 200 BCE and 200 CE, the southern peninsula was ruled by the Cheras, the Cholas, and the Pandyas, dynasties that traded extensively with the Roman Empire and with West and South-East Asia.[103][104] In North India, Hinduism asserted patriarchal control within the family, leading to increased subordination of women.[105][98] By the 4th and 5th centuries, the Gupta Empire had created a complex system of administration and taxation in the greater Ganges Plain; this system became a model for later Indian kingdoms.[106][107] Under the Guptas, a renewed Hinduism based on devotion, rather than the management of ritual, began to assert itself.[108] This renewal was reflected in a flowering of sculpture and architecture, which found patrons among an urban elite.[107] Classical Sanskrit literature flowered as well, and Indian science, astronomy, medicine, and mathematics made significant advances.[107]
