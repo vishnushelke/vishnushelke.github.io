@@ -1,3 +1,6 @@
+html{
+  scroll-behavior: smooth;
+}
 /* Slideshow container */
 .slideshow-container {
   max-width: 100%;
@@ -6,7 +9,10 @@
   padding-top: 60px;
   /* margin: auto; */
 }
-
+.image {
+  width: 40%;
+  align-self: center;
+}
 /* Hide the images by default */
 .mySlides {
   display: none;
@@ -36,8 +42,8 @@
   right: 10;
   border-radius: 3px 0 0 3px;
 }
-.prev{
-    left: 10;
+.prev {
+  left: 10;
 }
 
 /* On hover, add a black background color with a little bit see-through */
@@ -145,18 +151,20 @@
   text-align: center;
   /* width: 100%; */
   text-align: center;
+  z-index: 1;
 }
 .headerTextText {
   color: black;
   font-size: 20px;
   /* width: 100%; */
   align-self: center;
+  text-shadow: 2px 2px 5px rgb(117, 197, 51);
+  letter-spacing: 1px;
 }
 .logoImage {
   align-self: center;
   height: 30px;
   width: 30px;
-  border-radius: 15px;
   padding-left: 15px;
 }
 .contact {
@@ -173,6 +181,8 @@
 .info {
   width: 100%;
   padding-bottom: 30px;
+  color: rgb(0, 0, 0);
+  font-size: larger;
 }
 .index {
   width: 100%;
@@ -310,4 +320,3 @@
     font-size: 13px;
   }
 }
-

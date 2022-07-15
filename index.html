@@ -6,7 +6,7 @@
     <title>Swami Vivekanand NGO</title>
     <link rel="stylesheet" href="css/Style.css">
 </head>
-<body class="body" style="display: flex;flex-direction: column;">
+<body class="body" style="display: flex;flex-direction: column;background-image: url('images/background_image.png');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
     <div class="header">
         <div class="logo">
             <img class="logoImage" src="images/Swami-Vivekananda.jpg" alt="logo"> </img>
@@ -25,20 +25,17 @@
     <!-- Full-width images with number and caption text -->
     <div class="mySlides fade" style="display: flex; justify-content: center;">
       <div class="numbertext" >1 / 3</div>
-      <img src="images/img1.jpg" style="width:40%; align-self: center;">
-      <div class="text">Caption Text</div>
+      <img class="image" src="images/img1.jpg" onclick="getImageText(1)">
     </div>
   
     <div class="mySlides fade" style="display: flex; justify-content: center;">
       <div class="numbertext">2 / 3</div>
-      <img src="images/img2.jpg" style="width:40%">
-      <div class="text">Caption Two</div>
+      <img class="image" src="images/img2.jpg" onclick="getImageText(2)">
     </div>
   
     <div class="mySlides fade" style="display: flex; justify-content: center;">
       <div class="numbertext">3 / 3</div>
-      <img src="images/img3.jpg" style="width:40%">
-      <div class="text">Caption Three</div>
+      <img class="image" src="images/img3.jpg" onclick="getImageText(3)">
     </div>
   
     <!-- Next and previous buttons -->
@@ -75,6 +72,7 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "flex";
   dots[slideIndex-1].className += " active";
+  getImageText(slideIndex);
 }
   </script>
   <br>
@@ -96,6 +94,15 @@ function showSlides(n) {
         </div>
         <div class="info">
             <script>
+              function getImageText(n){
+                if(n===1){
+                  document.getElementById("intro").innerHTML = "This is a photo of 2 bad boys. Khup nalayak por ahet he. Yancha nalayakpana purn college madhe famous hota. He evadhe nalayak hote ki vishnu kiti pan bolla tari kadhich college madhun trip la nahi aale. Ani yancha nalayakpana aankhi pan chaluch ahe. Ashi hi nalayak por. Yanna latha ani bukkya maarun namaskar kela pahije."
+                }else if(n===2){
+                  document.getElementById("intro").innerHTML = "This is a photo of Abhya. HAHAHAHAHHAHAHAHAHAHA!!!!!!"
+                }else if(n===3){
+                  document.getElementById("intro").innerHTML = "This is a photo of Ravya. HAHAHAHAHHAHAHAHAHAHA!!!!!!"
+                }                
+              }
                 function getIntro(){
                     document.getElementById("intro").innerHTML = `By 55,000 years ago, the first modern humans, or Homo sapiens, had arrived on the Indian subcontinent from Africa, where they had earlier evolved.[27][28][29] The earliest known modern human remains in South Asia date to about 30,000 years ago.[27] After 6500 BCE, evidence for domestication of food crops and animals, construction of permanent structures, and storage of agricultural surplus appeared in Mehrgarh and other sites in what is now Balochistan, Pakistan.[82] These gradually developed into the Indus Valley civilisation,[83][82] the first urban culture in South Asia,[84] which flourished during 2500–1900 BCE in what is now Pakistan and western India.[85] Centred around cities such as Mohenjo-daro, Harappa, Dholavira, and Kalibangan, and relying on varied forms of subsistence, the civilisation engaged robustly in crafts production and wide-ranging trade.[84]
 </br> During the period 2000–500 BCE, many regions of the subcontinent transitioned from the Chalcolithic cultures to the Iron Age ones.[86] The Vedas, the oldest scriptures associated with Hinduism,[87] were composed during this period,[88] and historians have analysed these to posit a Vedic culture in the Punjab region and the upper Gangetic Plain.[86] Most historians also consider this period to have encompassed several waves of Indo-Aryan migration into the subcontinent from the north-west.[87] The caste system, which created a hierarchy of priests, warriors, and free peasants, but which excluded indigenous peoples by labelling their occupations impure, arose during this period.[89] On the Deccan Plateau, archaeological evidence from this period suggests the existence of a chiefdom stage of political organisation.[86] In South India, a progression to sedentary life is indicated by the large number of megalithic monuments dating from this period,[90] as well as by nearby traces of agriculture, irrigation tanks, and craft traditions.[90]
