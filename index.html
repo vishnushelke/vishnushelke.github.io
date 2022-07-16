@@ -21,19 +21,19 @@
         </div>
     </div>
 
-    <!-- Slideshow container -->
-    <div class="mainImageDiv" style="display: flex;justify-content: space-between; padding-top: 160px;width: 85%;">
-      <div style="width: 50%;position: relative;height: 300;">
-        <img class="mainSlides" src="images/vivekanand.jpg" alt="vivekananda" style="float: left; width: 100%;height: 300;">
-        <img class="mainSlides" src="images/img1.jpg" alt="vivekananda" style="float: left; width: 100%;height: 300;">
-        <img class="mainSlides" src="images/img2.jpg" alt="vivekananda" style="float: left; width: 100%;height: 300;">
-        <img class="mainSlides" src="images/img3.jpg" alt="vivekananda" style="float: left; width: 100%;height: 300;">  
+    <!-- Main Slideshow container -->
+    <div class="mainSlideShowAndTextDiv">
+      <div class="mainSlideShowImages">
+        <img class="mainSlides" src="images/vivekanand.jpg" alt="vivekananda">
+        <img class="mainSlides" src="images/img1.jpg" alt="vivekananda">
+        <img class="mainSlides" src="images/img2.jpg" alt="vivekananda">
+        <img class="mainSlides" src="images/img3.jpg" alt="vivekananda">  
       </div>
-      <div style="position: absolute;">
+      <div class="mainSlideShowButtons">
         <button class="main-slide-left" onclick="plusDivs(-1)">&#10094;</button>
         <button class="main-slide-right" onclick="plusDivs(+1)">&#10095;</button>
       </div>
-      <div class="mainImageText" style="width: 45%; background-color: rgb(149, 200, 212); padding-left: 2%;">
+      <div class="mainImageText">
           <h2> Vision </h2>
           <p>
             To be a university globally trusted for technical excellence where learning and research integrate to sustain society and industry.
@@ -52,24 +52,21 @@
           </p>
       </div>
     </div>
+    
+    <!-- Work Slideshow Container -->
   <div class="slideshow-container">
-
-     <!-- Full-width images with number and caption text  -->
     <div class="mySlides fade" style="display: flex; justify-content: center;">
       <div class="numbertext" >1 / 3</div>
       <img class="image" src="images/img1.jpg" onclick="getImageText(1)">
-    </div>
-  
+    </div>  
     <div class="mySlides fade" style="display: flex; justify-content: center;">
       <div class="numbertext">2 / 3</div>
       <img class="image" src="images/img2.jpg" onclick="getImageText(2)">
-    </div>
-  
+    </div>  
     <div class="mySlides fade" style="display: flex; justify-content: center;">
       <div class="numbertext">3 / 3</div>
       <img class="image" src="images/img3.jpg" onclick="getImageText(3)">
     </div>
-
      <!-- Next and previous buttons -->
     <div class="prevArrow">
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -125,6 +122,7 @@
           x[mainSlideIndex-1].style.display = "block";
         }
 
+        //function to automate main slideshow
         function carousel() {
           var i;
           var x = document.getElementsByClassName("mainSlides");
@@ -145,7 +143,7 @@
             let dotClass = document.getElementsByClassName("dotsClass");
             let prevArrow = document.getElementsByClassName("prevArrow");
             let nextArrow = document.getElementsByClassName("nextArrow");
-            let mainImage = document.getElementsByClassName("mainImageDiv");
+            let mainImage = document.getElementsByClassName("mainSlideShowAndTextDiv");
             let slideShowContainer = document.getElementsByClassName("slideshow-container");
           if(displayWork === true){
             for (i = 0; i < dotClass.length; i++) {
@@ -210,8 +208,8 @@
     <span class="dot" onclick="currentSlide(2)"></span>
     <span class="dot" onclick="currentSlide(3)"></span>
   </div>
-    <!-- <hr style="color: black;"> -->
-    <div class="indexPlusInfo" style="display: flex;padding-left: 2%;padding-right: 2%;justify-content: center;">
+
+  <div class="indexPlusInfo" style="display: flex;padding-left: 2%;padding-right: 2%;justify-content: center;">
         <div class="index">
             <button class="button" onclick="getMainPage()">Introduction</button>
             <button class="button" onclick="getIntro()">About Us</button>
@@ -222,20 +220,20 @@
         </div>
         <div class="info">
             <script>
-              function getImageText(n){
-                if(n===1){
-                  document.getElementById("intro").innerHTML = "This is a photo of 2 bad boys. Khup nalayak por ahet he. Yancha nalayakpana purn college madhe famous hota. He evadhe nalayak hote ki vishnu kiti pan bolla tari kadhich college madhun trip la nahi aale. Ani yancha nalayakpana aankhi pan chaluch ahe. Ashi hi nalayak por. Yanna latha ani bukkya maarun namaskar kela pahije."
-                }else if(n===2){
-                  document.getElementById("intro").innerHTML = "This is a photo of Abhya. HAHAHAHAHHAHAHAHAHAHA!!!!!!"
-                }else if(n===3){
-                  document.getElementById("intro").innerHTML = "This is a photo of Ravya. HAHAHAHAHHAHAHAHAHAHA!!!!!!"
-                }                
-              }
+                function getImageText(n){
+                  if(n===1){
+                    document.getElementById("intro").innerHTML = "This is a photo of 2 bad boys. Khup nalayak por ahet he. Yancha nalayakpana purn college madhe famous hota. He evadhe nalayak hote ki vishnu kiti pan bolla tari kadhich college madhun trip la nahi aale. Ani yancha nalayakpana aankhi pan chaluch ahe. Ashi hi nalayak por. Yanna latha ani bukkya maarun namaskar kela pahije."
+                  }else if(n===2){
+                    document.getElementById("intro").innerHTML = "This is a photo of Abhya. HAHAHAHAHHAHAHAHAHAHA!!!!!!"
+                  }else if(n===3){
+                    document.getElementById("intro").innerHTML = "This is a photo of Ravya. HAHAHAHAHHAHAHAHAHAHA!!!!!!"
+                  }                
+                }
                 function getIntro(){
                   hideWork();
                     document.getElementById("intro").innerHTML = `By 55,000 years ago, the first modern humans, or Homo sapiens, had arrived on the Indian subcontinent from Africa, where they had earlier evolved.[27][28][29] The earliest known modern human remains in South Asia date to about 30,000 years ago.[27] After 6500 BCE, evidence for domestication of food crops and animals, construction of permanent structures, and storage of agricultural surplus appeared in Mehrgarh and other sites in what is now Balochistan, Pakistan.[82] These gradually developed into the Indus Valley civilisation,[83][82] the first urban culture in South Asia,[84] which flourished during 2500–1900 BCE in what is now Pakistan and western India.[85] Centred around cities such as Mohenjo-daro, Harappa, Dholavira, and Kalibangan, and relying on varied forms of subsistence, the civilisation engaged robustly in crafts production and wide-ranging trade.[84]
-</br> During the period 2000–500 BCE, many regions of the subcontinent transitioned from the Chalcolithic cultures to the Iron Age ones.[86] The Vedas, the oldest scriptures associated with Hinduism,[87] were composed during this period,[88] and historians have analysed these to posit a Vedic culture in the Punjab region and the upper Gangetic Plain.[86] Most historians also consider this period to have encompassed several waves of Indo-Aryan migration into the subcontinent from the north-west.[87] The caste system, which created a hierarchy of priests, warriors, and free peasants, but which excluded indigenous peoples by labelling their occupations impure, arose during this period.[89] On the Deccan Plateau, archaeological evidence from this period suggests the existence of a chiefdom stage of political organisation.[86] In South India, a progression to sedentary life is indicated by the large number of megalithic monuments dating from this period,[90] as well as by nearby traces of agriculture, irrigation tanks, and craft traditions.[90]
-</br>We are happy that you've chosen our website to learn programming languages. We're sure you'll become one of the best programmers in your country. Good luck to you!`;
+                          </br> During the period 2000–500 BCE, many regions of the subcontinent transitioned from the Chalcolithic cultures to the Iron Age ones.[86] The Vedas, the oldest scriptures associated with Hinduism,[87] were composed during this period,[88] and historians have analysed these to posit a Vedic culture in the Punjab region and the upper Gangetic Plain.[86] Most historians also consider this period to have encompassed several waves of Indo-Aryan migration into the subcontinent from the north-west.[87] The caste system, which created a hierarchy of priests, warriors, and free peasants, but which excluded indigenous peoples by labelling their occupations impure, arose during this period.[89] On the Deccan Plateau, archaeological evidence from this period suggests the existence of a chiefdom stage of political organisation.[86] In South India, a progression to sedentary life is indicated by the large number of megalithic monuments dating from this period,[90] as well as by nearby traces of agriculture, irrigation tanks, and craft traditions.[90]
+                          </br>We are happy that you've chosen our website to learn programming languages. We're sure you'll become one of the best programmers in your country. Good luck to you!`;
                 }
                 function getRaviIntro(){
                   hideWork();
@@ -254,183 +252,14 @@
                             3, Gourmohan Mukherjee Street, birthplace of Vivekananda, now converted into a museum and cultural centre<br />
                             Vivekananda was born Narendranath Datta (shortened to Narendra or Naren)[18] in a Bengali family[19][20] at his ancestral home at 3 Gourmohan Mukherjee Street in Calcutta,[21] the capital of British India, on 12 January 1863 during the Makar Sankranti festival.[22] He belonged to a traditional family and was one of nine siblings.[23] His father, Vishwanath Datta, was an attorney at the Calcutta High Court.[19][24] Durgacharan Datta, Narendra's grandfather was a Sanskrit and Persian scholar[25] who left his family and became a monk at age twenty-five.[26] His mother, Bhubaneswari Devi, was a devout housewife.[25] The progressive, rational attitude of Narendra's father and the religious temperament of his mother helped shape his thinking and personality.[27][28] Narendranath was interested in spirituality from a young age and used to meditate before the images of deities such as Shiva, Rama, Sita, and Mahavir Hanuman.[29] He was fascinated by wandering ascetics and monks.[28] Narendra was naughty and restless as a child, and his parents often had difficulty controlling him. His mother said, "I prayed to Shiva for a son and he has sent me one of his demons".[26]<br />
                             <br />
-                            Education<br />
-                            In 1871, at the age of eight, Narendranath enrolled at Ishwar Chandra Vidyasagar's Metropolitan Institution, where he went to school until his family moved to Raipur in 1877.[30] In 1879, after his family's return to Calcutta, he was the only student to receive first-division marks in the Presidency College entrance examination. [31] He was an avid reader in a wide range of subjects, including philosophy, religion, history, social science, art and literature.[32] He was also interested in Hindu scriptures, including the Vedas, the Upanishads, the Bhagavad Gita, the Ramayana, the Mahabharata and the Puranas. Narendra was trained in Indian classical music,[33] and regularly participated in physical exercise, sports and organised activities. Narendra studied Western logic, Western philosophy and European history at the General Assembly's Institution (now known as the Scottish Church College).[34] In 1881, he passed the Fine Arts examination, and completed a Bachelor of Arts degree in 1884.[35][36] Narendra studied the works of David Hume, Immanuel Kant, Johann Gottlieb Fichte, Baruch Spinoza, Georg W. F. Hegel, Arthur Schopenhauer, Auguste Comte, John Stuart Mill and Charles Darwin.[37][38] He became fascinated with the evolutionism of Herbert Spencer and corresponded with him,[39][40] translating Herbert Spencer's book Education (1861) into Bengali.[41] While studying Western philosophers, he also learned Sanskrit scriptures and Bengali literature.[38]<br />
-                            <br />
-                            William Hastie (principal of Christian College, Calcutta, from where Narendra graduated) wrote, "Narendra is really a genius. I have travelled far and wide but I have never come across a lad of his talents and possibilities, even in German universities, among philosophical students. He is bound to make his mark in life".[42]<br />
-                            <br />
-                            Narendra was known for his prodigious memory and the ability at speed reading. Several incidents have been given as examples. In a talk, he once quoted verbatim, two or three pages from Pickwick Papers. Another incident that is given is his argument with a Swedish national where he gave reference to some details on Swedish history that the Swede originally disagreed with but later conceded. In another incident with Dr. Paul Deussen's at Kiel in Germany, Vivekananda was going over some poetical work and did not reply when the professor spoke to him. Later, he apologised to Dr. Deussen explaining that he was too absorbed in reading and hence did not hear him. The professor was not satisfied with this explanation, but Vivekananda quoted and interpreted verses from the text, leaving the professor dumbfounded about his feat of memory. Once, he requested some books written by Sir John Lubbock from a library and returned them the very next day, claiming that he had read them. The librarian refused to believe him until cross-examination about the contents convinced him that Vivekananda was being truthful.[43]<br />
-                            <br />
-                            Some accounts have called Narendra a shrutidhara (a person with a prodigious memory).[44]<br />
-                            <br />
-                            Spiritual apprenticeship – influence of Brahmo Samaj<br />
-                            See also: Swami Vivekananda and meditation<br />
-                            In 1880 Narendra joined Keshab Chandra Sen's Nava Vidhan, which was established by Sen after meeting Ramakrishna and reconverting from Christianity to Hinduism.[45] Narendra became a member of a Freemasonry lodge "at some point before 1884"[46] and of the Sadharan Brahmo Samaj in his twenties, a breakaway faction of the Brahmo Samaj led by Keshab Chandra Sen and Debendranath Tagore.[45][34][47][48] From 1881 to 1884, he was also active in Sen's Band of Hope, which tried to discourage youths from smoking and drinking.[45]<br />
-                            <br />
-                            It was in this cultic[49] milieu that Narendra became acquainted with Western esotericism.[50] His initial beliefs were shaped by Brahmo concepts, which denounces polytheism and the caste restriction,[29][51] and a "streamlined, rationalized, monotheistic theology strongly coloured by a selective and modernistic reading of the Upanisads and of the Vedanta."[52] Rammohan Roy, the founder of the Brahmo Samaj who was strongly influenced by unitarianism, strove towards a universalistic interpretation of Hinduism.[52] His ideas were "altered [...] considerably" by Debendranath Tagore, who had a romantic approach to the development of these new doctrines, and questioned central Hindu beliefs like reincarnation and karma, and rejected the authority of the Vedas.[53] Tagore also brought this "neo-Hinduism" closer in line with western esotericism, a development which was furthered by Sen.[54] Sen was influenced by transcendentalism, an American philosophical-religious movement strongly connected with unitarianism, which emphasised personal religious experience over mere reasoning and theology.[55] Sen strived to "an accessible, non-renunciatory, everyman type of spirituality", introducing "lay systems of spiritual practice" which can be regarded as prototypes of the kind of Yoga-exercises which Vivekananda popularised in the west.[56]<br />
-                            <br />
-                            The same search for direct intuition and understanding can be seen with Vivekananda. Not satisfied with his knowledge of philosophy, Narendra came to "the question which marked the real beginning of his intellectual quest for God."[47] He asked several prominent Calcutta residents if they had come "face to face with God", but none of their answers satisfied him.[57][36] At this time, Narendra met Debendranath Tagore (the leader of Brahmo Samaj) and asked if he had seen God. Instead of answering his question, Tagore said "My boy, you have the Yogi's eyes."[47][41] According to Banhatti, it was Ramakrishna who really answered Narendra's question, by saying "Yes, I see Him as I see you, only in an infinitely intenser sense."[47] According to De Michelis, Vivekananda was more influenced by the Brahmo Samaj's and its new ideas, than by Ramakrishna.[56] Swami Medhananda agrees that the Brahmo Samaj was a formative influence,[58] but that "it was Narendra's momentous encounter with Ramakrishna that changed the course of his life by turning him away from Brahmoism."[59] According to De Michelis, it was Sen's influence who brought Vivekananda fully into contact with western esotericism, and it was also via Sen that he met Ramakrishna.[60]<br />
-                            <br />
-                            With Ramakrishna<br />
-                            Main article: Relationship between Ramakrishna and Swami Vivekananda<br />
-                            See also: Swami Vivekananda's prayer to Kali at Dakshineswar<br />
-                            In 1881 Narendra first met Ramakrishna, who became his spiritual focus after his own father had died in 1884.[61]<br />
-                            <br />
-                            Narendra's first introduction to Ramakrishna occurred in a literature class at General Assembly's Institution when he heard Professor William Hastie lecturing on William Wordsworth's poem, The Excursion.[51] While explaining the word "trance" in the poem, Hastie suggested that his students visit Ramakrishna of Dakshineswar to understand the true meaning of trance. This prompted some of his students (including Narendra) to visit Ramakrishna.[62][63][64]<br />
-                            <br />
-                            Image of Ramakrishna, sitting.<br />
-                            Ramakrishna, guru of Vivekananda<br />
-                            Image of Vivekananda, sitting in meditative posture, eyes opened<br />
-                            Vivekananda in Cossipore 1886<br />
-                            They probably first met personally in November 1881,[note 1] though Narendra did not consider this their first meeting, and neither man mentioned this meeting later.[62] At this time, Narendra was preparing for his upcoming F. A. examination, when Ram Chandra Datta accompanied him to Surendra Nath Mitra's, house where Ramakrishna was invited to deliver a lecture.[66] According to Makarand Paranjape, at this meeting Ramakrishna asked young Narendra to sing. Impressed by his singing talent, he asked Narendra to come to Dakshineshwar.[67]<br />
-                            <br />
-                            In late 1881 or early 1882, Narendra went to Dakshineswar with two friends and met Ramakrishna.[62] This meeting proved to be a turning point in his life.[68] Although he did not initially accept Ramakrishna as his teacher and rebelled against his ideas, he was attracted by his personality and began to frequently visit him at Dakshineswar.[69] He initially saw Ramakrishna's ecstasies and visions as "mere figments of imagination"[27] and "hallucinations".[70] As a member of Brahmo Samaj, he opposed idol worship, polytheism and Ramakrishna's worship of Kali.[71] He even rejected the Advaita Vedanta of "identity with the absolute" as blasphemy and madness, and often ridiculed the idea.[70] Narendra tested Ramakrishna, who faced his arguments patiently: "Try to see the truth from all angles", he replied.[69]<br />
-                            <br />
-                            Narendra's father's sudden death in 1884 left the family bankrupt; creditors began demanding the repayment of loans, and relatives threatened to evict the family from their ancestral home. Narendra, once a son of a well-to-do family, became one of the poorest students in his college.[72] He unsuccessfully tried to find work and questioned God's existence,[73] but found solace in Ramakrishna and his visits to Dakshineswar increased.[74]<br />
-                            <br />
-                            One day, Narendra requested Ramakrishna to pray to goddess Kali for their family's financial welfare. Ramakrishna suggested him to go to the temple himself and pray. Following Ramakrishna's suggestion, he went to the temple thrice, but failed to pray for any kind of worldly necessities and ultimately prayed for true knowledge and devotion from the goddess.[75][76][77] Narendra gradually grew ready to renounce everything for the sake of realising God, and accepted Ramakrishna as his Guru.[69]<br />
-                            <br />
-                            In 1885, Ramakrishna developed throat cancer, and was transferred to Calcutta and (later) to a garden house in Cossipore. Narendra and Ramakrishna's other disciples took care of him during his last days, and Narendra's spiritual education continued. At Cossipore, he experienced Nirvikalpa samadhi.[78] Narendra and several other disciples received ochre robes from Ramakrishna, forming his first monastic order.[79] He was taught that service to men was the most effective worship of God.[27][78] Ramakrishna asked him to care for the other monastic disciples, and in turn asked them to see Narendra as their leader.[80] Ramakrishna died in the early-morning hours of 16 August 1886 in Cossipore.[80][81]<br />
-                            <br />
-                            Founding of first Ramakrishna Math at Baranagar<br />
-                            Main article: Baranagar Math<br />
-                            <br />
-                            Group photo taken on 30 January 1887 in Baranagar Math, Kolkata.<br />
-                            Standing: (l–r) ) Shivananda, Ramakrishnananda, Vivekananda, Randhuni, Debendranath Majumdar, Mahendranath Gupta (Shri M), Trigunatitananda, H.Mustafi
-                            Sitting: (l–r) Niranjanananda, Saradananda, Hutko Gopal, Abhedananda<br />
-                            After Ramakrishna's death, his devotees and admirers stopped supporting his disciples.[82] Unpaid rent accumulated, and Narendra and the other disciples had to find a new place to live.[83] Many returned home, adopting a Grihastha (family-oriented) way of life.[84] Narendra decided to convert a dilapidated house at Baranagar into a new math (monastery) for the remaining disciples. Rent for the Baranagar Math was low, raised by "holy begging" (mādhukarī). The math became the first building of the Ramakrishna Math: the monastery of the monastic order of Ramakrishna.[68] Narendra and other disciples used to spend many hours in practicing meditation and religious austerities every day.[85] Narendra later reminisced about the early days of the monastery:[86]<br />
-
-                            We underwent a lot of religious practice at the Baranagar Math. We used to get up at 3:00 am and become absorbed in japa and meditation. What a strong spirit of detachment we had in those days! We had no thought even as to whether the world existed or not.
-
-                            In 1887, Narendra compiled a Bengali song anthology named Sangeet Kalpataru with Vaishnav Charan Basak. Narendra collected and arranged most of the songs of this compilation, but could not finish the work of the book for unfavourable circumstances.[87]
-
-                            Monastic vows
-                            In December 1886, the mother of Baburam[note 2] invited Narendra and his other brother monks to Antpur village. Narendra and the other aspiring monks accepted the invitation and went to Antpur to spend a few days. In Antpur, in the Christmas Eve of 1886, Narendra and eight other disciples took formal monastic vows.[85] They decided to live their lives as their master lived.[85] Narendranath took the name "Swami Vivekananda".[88]
-
-                            Travels in India (1888–1893)
-                            Main article: Swami Vivekananda's travels in India (1888–1893)
-                            In 1888, Narendra left the monastery as a Parivrâjaka— the Hindu religious life of a wandering monk, "without fixed abode, without ties, independent and strangers wherever they go".[89] His sole possessions were a kamandalu (water pot), staff and his two favourite books: the Bhagavad Gita and The Imitation of Christ.[90] Narendra travelled extensively in India for five years, visiting centres of learning and acquainting himself with diverse religious traditions and social patterns.[91][92] He developed sympathy for the suffering and poverty of the people, and resolved to uplift the nation.[91][93] Living primarily on bhiksha (alms), Narendra travelled on foot and by railway (with tickets bought by admirers). During his travels he met, and stayed with Indians from all religions and walks of life: scholars, dewans, rajas, Hindus, Muslims, Christians, paraiyars (low-caste workers) and government officials.[93] Narendra left Bombay for Chicago on 31 May 1893 with the name "Vivekananda", as suggested by Ajit Singh of Khetri,[94] which means "the bliss of discerning wisdom," from Sanskrit viveka and ānanda.[95]
-
-                            First visit to the West (1893–1897)
-                            Vivekananda started his journey to the West on 31 May 1893[96] and visited several cities in Japan (including Nagasaki, Kobe, Yokohama, Osaka, Kyoto and Tokyo),[97] China and Canada en route to the United States,[96] reaching Chicago on 30 July 1893,[98][96] where the "Parliament of Religions" took place in September 1893.[99] The Congress was an initiative of the Swedenborgian layman, and judge of the Illinois Supreme Court, Charles C. Bonney,[100][101] to gather all the religions of the world, and show "the substantial unity of many religions in the good deeds of the religious life."[100] It was one of the more than 200 adjunct gatherings and congresses of the Chicago's World's Fair,[100] and was "an avant-garde intellectual manifestation of [...] cultic milieus, East and West,"[102] with the Brahmo Samaj and the Theosophical Society being invited as being representative of Hinduism.[103]
-
-                            Vivekananda wanted to join, but was disappointed to learn that no one without credentials from a bona fide organisation would be accepted as a delegate.[104] Vivekananda contacted Professor John Henry Wright of Harvard University, who invited him to speak at Harvard.[104] Vivekananda wrote of the professor, "He urged upon me the necessity of going to the Parliament of Religions, which he thought would give an introduction to the nation".[105][note 3] Vivekananda submitted an application, "introducing himself as a monk 'of the oldest order of sannyāsis ... founded by Sankara,'"[103] supported by the Brahmo Samaj representative Protapchandra Mozoombar, who was also a member of the Parliament's selection committee, "classifying the Swami as a representative of the Hindu monastic order."[103] Hearing Vivekananda speak, Harvard psychology professor William James said, "that man is simply a wonder for oratorical power. He is an honor to humanity."[106]
-
-                            Parliament of the World's Religions
-                            Main article: Swami Vivekananda at the Parliament of the World's Religions (1893)
-                            A group of men are sitting and looking forward
-                            Vivekananda on the platform at the Parliament of Religions, September 1893; left to right: Virchand Gandhi, Dharmapala, Vivekananda and (possibly) Gaston Bonet-Maury
-                            Five men are standing
-                            Swami Vivekananda with the East Indian group, in the photo: (from left to right) Narasimha Chaira, Lakeshnie Narain, Vivekananda, H. Dharmapala, and Virchand Gandhi
-                            The Parliament of the World's Religions opened on 11 September 1893 at the Art Institute of Chicago, as part of the World's Columbian Exposition.[107][108][109] On this day, Vivekananda gave a brief speech representing India and Hinduism.[110] He was initially nervous, bowed to Saraswati (the Hindu goddess of learning) and began his speech with "Sisters and brothers of America!".[111][109] At these words, Vivekananda received a two-minute standing ovation from the crowd of seven thousand.[112] According to Sailendra Nath Dhar, when silence was restored he began his address, greeting the youngest of the nations on behalf of "the most ancient order of monks in the world, the Vedic order of sannyasins, a religion which has taught the world both tolerance and universal acceptance".[113][note 4] Vivekananda quoted two illustrative passages from the "Shiva mahimna stotram": "As the different streams having their sources in different places all mingle their water in the sea, so, O Lord, the different paths which men take, through different tendencies, various though they appear, crooked or straight, all lead to Thee!" and "Whosoever comes to Me, through whatsoever form, I reach him; all men are struggling through paths that in the end lead to Me."[116] According to Sailendra Nath Dhar, "it was only a short speech, but it voiced the spirit of the Parliament."[116][117]
-
-                            Parliament President John Henry Barrows said, "India, the Mother of religions was represented by Swami Vivekananda, the Orange-monk who exercised the most wonderful influence over his auditors".[111] Vivekananda attracted widespread attention in the press, which called him the "cyclonic monk from India". The New York Critique wrote, "He is an orator by divine right, and his strong, intelligent face in its picturesque setting of yellow and orange was hardly less interesting than those earnest words, and the rich, rhythmical utterance he gave them". The New York Herald noted, "Vivekananda is undoubtedly the greatest figure in the Parliament of Religions. After hearing him we feel how foolish it is to send missionaries to this learned nation".[118] American newspapers reported Vivekananda as "the greatest figure in the parliament of religions" and "the most popular and influential man in the parliament".[119] The Boston Evening Transcript reported that Vivekananda was "a great favourite at the parliament... if he merely crosses the platform, he is applauded".[120] He spoke several more times "at receptions, the scientific section, and private homes"[113] on topics related to Hinduism, Buddhism and harmony among religions until the parliament ended on 27 September 1893. Vivekananda's speeches at the Parliament had the common theme of universality, emphasising religious tolerance.[121] He soon became known as a "handsome oriental" and made a huge impression as an orator.[122]
-
-                            Lecture tours in the UK and US
-                            "I do not come", said Swamiji on one occasion in America, "to convert you to a new belief. I want you to keep your own belief; I want to make the Methodist a better Methodist; the Presbyterian a better Presbyterian; the Unitarian a better Unitarian. I want to teach you to live the truth, to reveal the light within your own soul."[123]
-
-                            After the Parliament of Religions, he toured many parts of the US as a guest. His popularity opened up new views for expanding on "life and religion to thousands".[122] During a question-answer session at Brooklyn Ethical Society, he remarked, "I have a message to the West as Buddha had a message to the East."
-
-                            Vivekananda spent nearly two years lecturing in the eastern and central United States, primarily in Chicago, Detroit, Boston, and New York. He founded the Vedanta Society of New York in 1894.[124] By spring 1895 his busy, tiring schedule had affected his health.[125] He ended his lecture tours and began giving free, private classes in Vedanta and yoga. Beginning in June 1895, Vivekananda gave private lectures to a dozen of his disciples at Thousand Island Park, New York for two months.[125]
-
-                            During his first visit to the West he travelled to the UK twice, in 1895 and 1896, lecturing successfully there.[126] In November 1895, he met Margaret Elizabeth Noble an Irish woman who would become Sister Nivedita.[125] During his second visit to the UK in May 1896 Vivekananda met Max Müller, a noted Indologist from Oxford University who wrote Ramakrishna's first biography in the West.[117] From the UK, Vivekananda visited other European countries. In Germany, he met Paul Deussen, another Indologist.[127] Vivekananda was offered academic positions in two American universities (one the chair in Eastern Philosophy at Harvard University and a similar position at Columbia University); he declined both, since his duties would conflict with his commitment as a monk.[125]
-
-
-                            Vivekananda in Greenacre, Maine (August 1894).[128]
-
-                            Vivekananda at Mead sisters' house, South Pasadena in 1900.
-                            Vivekananda's success led to a change in mission, namely the establishment of Vedanta centres in the West.[129] Vivekananda adapted traditional Hindu ideas and religiosity to suit the needs and understandings of his western audiences, who were especially attracted by and familiar with western esoteric traditions and movements like Transcendentalism and New thought.[130] An important element in his adaptation of Hindu religiosity was the introduction of his "four yogas" model, which includes Raja yoga, his interpretation of Patanjali's Yoga sutras,[131] which offered a practical means to realise the divine force within which is central to modern western esotericism.[130] In 1896, his book Raja Yoga was published, becoming an instant success; it was highly influential in the western understanding of yoga, in Elizabeth de Michelis's view marking the beginning of modern yoga.[132][133]
-
-                            Vivekananda attracted followers and admirers in the US and Europe, including Josephine MacLeod, Betty Leggett, Lady Sandwich, William James, Josiah Royce, Robert G. Ingersoll, Lord Kelvin, Harriet Monroe, Ella Wheeler Wilcox, Sarah Bernhardt, Nikola Tesla, Emma Calvé and Hermann Ludwig Ferdinand von Helmholtz.[27][125][127][134][135] He initiated several followers : Marie Louise (a French woman) became Swami Abhayananda, and Leon Landsberg became Swami Kripananda,[136] so that they could continue the work of the mission of the Vedanta Society. This society still is filled with foreign nationals and is also located in Los Angeles.[137] During his stay in America, Vivekananda was given land in the mountains to the southeast of San Jose, California to establish a retreat for Vedanta students. He called it "Peace retreat", or, Shanti Asrama.[138] The largest American centre is the Vedanta Society of Southern California in Hollywood, one of the twelve main centres. There is also a Vedanta Press in Hollywood which publishes books about Vedanta and English translations of Hindu scriptures and texts.[139] Christina Greenstidel of Detroit was also initiated by Vivekananda with a mantra and she became Sister Christine,[140] and they established a close father–daughter relationship.[141]
-
-                            From the West, Vivekananda revived his work in India. He regularly corresponded with his followers and brother monks,[note 5] offering advice and financial support. His letters from this period reflect his campaign of social service,[142] and were strongly worded.[143] He wrote to Akhandananda, "Go from door to door amongst the poor and lower classes of the town of Khetri and teach them religion. Also, let them have oral lessons on geography and such other subjects. No good will come of sitting idle and having princely dishes, and saying "Ramakrishna, O Lord!"—unless you can do some good to the poor".[144][145] In 1895, Vivekananda founded the periodical Brahmavadin to teach the Vedanta.[146] Later, Vivekananda's translation of the first six chapters of The Imitation of Christ was published in Brahmavadin in 1899.[147] Vivekananda left for India on 16 December 1896 from England with his disciples Captain and Mrs. Sevier and J.J. Goodwin. On the way, they visited France and Italy, and set sail for India from Naples on 30 December 1896.[148] He was later followed to India by Sister Nivedita, who devoted the rest of her life to the education of Indian women and India's independence.[125][149]
-
-                            Back in India (1897–1899)
-                            A group photo of Vivekananda and his disciples
-                            Vivekananda at Chennai 1897
-                            The ship from Europe arrived in Colombo, British Ceylon (now Sri Lanka) on 15 January 1897,[148] and Vivekananda received a warm welcome. In Colombo, he gave his first public speech in the East. From there on, his journey to Calcutta was triumphant. Vivekananda travelled from Colombo to Pamban, Rameswaram, Ramnad, Madurai, Kumbakonam and Madras, delivering lectures. Common people and rajas gave him an enthusiastic reception. During his train travels, people often sat on the rails to force the train to stop, so they could hear him.[148] From Madras (now Chennai), he continued his journey to Calcutta and Almora. While in the West, Vivekananda spoke about India's great spiritual heritage; in India, he repeatedly addressed social issues: uplifting the people, eliminating the caste system, promoting science and industrialisation, addressing widespread poverty and ending colonial rule. These lectures, published as Lectures from Colombo to Almora, demonstrate his nationalistic fervour and spiritual ideology.[150]
-
-                            Image of Advaita Ashrama, Mayavati, a branch of the Ramakrishna Math
-                            Advaita Ashrama, Mayavati (a branch of the Ramakrishna Math founded on 19 March 1899) later published many of Vivekananda's work and now publishes Prabuddha Bharata.
-                            On 1 May 1897 in Calcutta, Vivekananda founded the Ramakrishna Mission for social service. Its ideals are based on Karma Yoga,[151][152] and its governing body consists of the trustees of the Ramakrishna Math (which conducts religious work).[153] Both Ramakrishna Math and Ramakrishna Mission have their headquarters at Belur Math.[117][154] Vivekananda founded two other monasteries: one in Mayavati in the Himalayas (near Almora), the Advaita Ashrama and another in Madras (now Chennai). Two journals were founded: Prabuddha Bharata in English and Udbhodan in Bengali.[155] That year, famine-relief work was begun by Swami Akhandananda in the Murshidabad district.[117][153]
-
-                            Vivekananda earlier inspired Jamsetji Tata to set up a research and educational institution when they travelled together from Yokohama to Chicago on Vivekananda's first visit to the West in 1893. Tata now asked him to head his Research Institute of Science; Vivekananda declined the offer, citing a conflict with his "spiritual interests".[156][157][158] He visited Punjab, attempting to mediate an ideological conflict between Arya Samaj (a reformist Hindu movement) and sanatan (orthodox Hindus).[159] After brief visits to Lahore,[153] Delhi and Khetri, Vivekananda returned to Calcutta in January 1898. He consolidated the work of the math and trained disciples for several months. Vivekananda composed "Khandana Bhava–Bandhana", a prayer song dedicated to Ramakrishna, in 1898.[160]
-
-                            Arise, awake, and stop not till the goal is reached, the famous quote of vivekananda was said in 26 January 1897 in kumbakonam, tamil nadu
-
-                            Second visit to the West and final years (1899–1902)
-                            See also: Swami Vivekananda in California
-                            Vivekananda sitting, wearing white shawl
-                            Vivekananda at Belur Math on 19 June 1899
-                            Image of Vivekananda relaxing in a chair.
-                            Vivekananda (photo taken in Bushnell Studio, San Francisco, 1900)
-                            Despite declining health, Vivekananda left for the West for a second time in June 1899[161] accompanied by Sister Nivedita and Swami Turiyananda. Following a brief stay in England, he went to the United States. During this visit, Vivekananda established Vedanta Societies in San Francisco and New York and founded a shanti ashrama (peace retreat) in California.[162] He then went to Paris for the Congress of Religions in 1900.[163] His lectures in Paris concerned the worship of the lingam and the authenticity of the Bhagavad Gita.[162] Vivekananda then visited Brittany, Vienna, Istanbul, Athens and Egypt. The French philosopher Jules Bois was his host for most of this period, until he returned to Calcutta on 9 December 1900.[162]
-
-                            After a brief visit to the Advaita Ashrama in Mayavati, Vivekananda settled at Belur Math, where he continued co-ordinating the works of Ramakrishna Mission, the math and the work in England and the US. He had many visitors, including royalty and politicians. Although Vivekananda was unable to attend the Congress of Religions in 1901 in Japan due to deteriorating health, he made pilgrimages to Bodhgaya and Varanasi.[164] Declining health (including asthma, diabetes and chronic insomnia) restricted his activity.[165]
-
-                            Death
-                            On 4 July 1902 (the day of his death),[166] Vivekananda awoke early, went to the monastery at Belur Math and meditated for three hours. He taught Shukla-Yajur-Veda, Sanskrit grammar and the philosophy of yoga to pupils,[167][168] later discussing with colleagues a planned Vedic college in the Ramakrishna Math. At 7:00 pm Vivekananda went to his room, asking not to be disturbed;[167] he died at 9:20 p.m. while meditating.[169] According to his disciples, Vivekananda attained mahasamādhi;[170] the rupture of a blood vessel in his brain was reported as a possible cause of death.[171] His disciples believed that the rupture was due to his brahmarandhra (an opening in the crown of his head) being pierced when he attained mahasamādhi. Vivekananda fulfilled his prophecy that he would not live forty years.[172] He was cremated on a sandalwood funeral pyre on the bank of the Ganga in Belur, opposite where Ramakrishna was cremated sixteen years earlier.[173]
-
-                            While synthesizing and popularizing various strands of Hindu-thought, most notably classical yoga and (Advaita) Vedanta, Vivekananda was influenced by western ideas such as Universalism, via Unitarian missionaries who collaborated with the Brahmo Samaj.[6][174][7][175][176] His initial beliefs were shaped by Brahmo concepts, which included belief in a formless God and the deprecation of idolatry,[29][51] and a "streamlined, rationalized, monotheistic theology strongly coloured by a selective and modernistic reading of the Upanisads and of the Vedanta".[177] He propagated the idea that "the divine, the absolute, exists within all human beings regardless of social status",[178] and that "seeing the divine as the essence of others will promote love and social harmony".[178] Via his affiliations with Keshub Chandra Sen's Nava Vidhan,[179] the Freemasonry lodge,[180] the Sadharan Brahmo Samaj,[179][34][47][48] and Sen's Band of Hope, Vivekananda became acquainted with Western esotericism.[8]
-
-                            He was also influenced by Ramakrishna, who gradually brought Narendra to a Vedanta-based worldview that "provides the ontological basis for 'śivajñāne jīver sevā', the spiritual practice of serving human beings as actual manifestations of God."[181]
-
-                            Vivekananda propagated that the essence of Hinduism was best expressed in Adi Shankara's Advaita Vedanta philosophy.[182] Nevertheless, following Ramakrishna, and in contrast to Advaita Vedanta, Vivekananda believed that the Absolute is both immanent and transcendent.[note 6] According to Anil Sooklal, Vivekananda's neo-Vedanta "reconciles Dvaita or dualism and Advaita or non-dualism," viewing Brahman as "one without a second," yet "both qualified, saguna, and qualityless, nirguna."[185][note 7] Vivekananda summarised the Vedanta as follows, giving it a modern and Universalistic interpretation,[182] showing the influence of classical yoga:
-
-                            Each soul is potentially divine. The goal is to manifest this Divinity within by controlling nature, external and internal. Do this either by work, or worship, or mental discipline, or philosophy—by one, or more, or all of these—and be free. This is the whole of religion. Doctrines, or dogmas, or rituals, or books, or temples, or forms, are but secondary details.
-
-                            Vivekananda's emphasis on nirvikalpa samadhi was preceded by medieval yogic influences on Advaita Vedanta.[186] In line with Advaita Vedanta texts like Dŗg-Dŗśya-Viveka (14th century) and Vedantasara (of Sadananda) (15th century), Vivekananda saw samadhi as a means to attain liberation.[187][note 8]
-
-                            Vivekananda popularized the notion of involution, a term which Vivekananda probably took from western Theosophists, notably Helena Blavatsky, in addition to Darwin's notion of evolution, and possibly referring to the Samkhya term sātkarya.[190] Theosophic ideas on involution has "much in common" with "theories of the descent of God in Gnosticism, Kabbalah, and other esoteric schools."[190] According to Meera Nanda, "Vivekananda uses the word involution exactly how it appears in Theosophy: the descent, or the involvement, of divine cosnciousness into matter."[191] With spirit, Vivekananda refers to prana or purusha, derived ("with some original twists") from Samkhya and classical yoga as presented by Patanjali in the Yoga sutras.[191]
-
-                            Vivekananda linked morality with control of the mind, seeing truth, purity and unselfishness as traits which strengthened it.[192] He advised his followers to be holy, unselfish and to have shraddhā (faith). Vivekananda supported brahmacharya,[193] believing it the source of his physical and mental stamina and eloquence.[194]
-
-                            Vivekananda's acquaintance with Western esotericism made him very successful in Western esoteric circles, beginning with his speech in 1893 at the Parliament of Religions. Vivekananda adapted traditional Hindu ideas and religiosity to suit the needs and understandings of his Western audiences, who were especially attracted by and familiar with Western esoteric traditions and movements like Transcendentalism and New thought.[195] An important element in his adaptation of Hindu religiosity was the introduction of his four yoga's model, which includes Raja yoga, his interpretation of Patanjali's Yoga sutras,[196] which offered a practical means to realize the divine force within which is central to modern Western esotericism.[195] In 1896 his book Raja Yoga was published, which became an instant success and was highly influential in the Western understanding of yoga.[197][198]
-
-                            Nationalism was a prominent theme in Vivekananda's thought. He believed that a country's future depends on its people, and his teachings focused on human development.[199] He wanted "to set in motion a machinery which will bring noblest ideas to the doorstep of even the poorest and the meanest".[200]
-
-                            Influence and legacy
-                            Main article: Influence and legacy of Swami Vivekananda
-                            Swami Vivekananda 2013 stamp of India 1.jpg
-                            Neo-Vedanta
-                            Vivekananda was one of the main representatives of Neo-Vedanta, a modern interpretation of selected aspects of Hinduism in line with western esoteric traditions, especially Transcendentalism, New Thought and Theosophy.[3] His reinterpretation was, and is, very successful, creating a new understanding and appreciation of Hinduism within and outside India,[3] and was the principal reason for the enthusiastic reception of yoga, Transcendental Meditation and other forms of Indian spiritual self-improvement in the West.[201] Agehananda Bharati explained, "...modern Hindus derive their knowledge of Hinduism from Vivekananda, directly or indirectly".[202] Vivekananda espoused the idea that all sects within Hinduism (and all religions) are different paths to the same goal.[203] However, this view has been criticised as an oversimplification of Hinduism.[203]
-
-                            Statue in a garden
-                            Vivekananda statue near the Gateway of India, Mumbai
-                            at Shri Ramakrishna Vidyashala, Mysore, India
-                            Statue at Shri Ramakrishna Vidyashala, Mysore, India
-                            Indian nationalism
-                            In the background of emerging nationalism in British-ruled India, Vivekananda crystallised the nationalistic ideal. In the words of social reformer Charles Freer Andrews, "The Swami's intrepid patriotism gave a new colour to the national movement throughout India. More than any other single individual of that period Vivekananda had made his contribution to the new awakening of India".[204] Vivekananda drew attention to the extent of poverty in the country, and maintained that addressing such poverty was a prerequisite for national awakening.[205] His nationalistic ideas influenced many Indian thinkers and leaders. Sri Aurobindo regarded Vivekananda as the one who awakened India spiritually.[206] Mahatma Gandhi counted him among the few Hindu reformers "who have maintained this Hindu religion in a state of splendor by cutting down the dead wood of tradition".[207]
-
-                            Name-giving
-                            In September 2010, the then Union Finance Minister Pranab Mukherjee, the President of India before the current President Ram Nath Kovind, approved in principle the Swami Vivekananda Values Education Project at a cost of ₹1 billion (US$13 million), with objectives including: involving youth with competitions, essays, discussions and study circles and publishing Vivekananda's works in a number of languages.[208] In 2011, the West Bengal Police Training College was renamed the Swami Vivekananda State Police Academy, West Bengal.[209] The state technical university in Chhattisgarh has been named the Chhattisgarh Swami Vivekanand Technical University.[210] In 2012, the Raipur airport was renamed Swami Vivekananda Airport.[211]
-
-                            Celebrations
-                            While National Youth Day in India is observed on his birthday, 12 January, the day he delivered his masterful speech at the Parliament of Religions, 11 September 1893, is "World Brotherhood Day".[212][213] The 150th birth anniversary of Swami Vivekananda was celebrated in India and abroad. The Ministry of Youth Affairs and Sports in India officially observed 2013 as the occasion in a declaration.[214]
-
-                            Movies
-                            Indian film director Utpal Sinha made a film, The Light: Swami Vivekananda as a tribute for his 150th birth anniversary.[215] Other Indian films about his life include: Swamiji (1949) by Amar Mullick, Swami Vivekananda (1955) by Amar Mullick, Birieswar Vivekananda (1964) by Modhu Bose, Life and Message of Swami Vivekananda (1964) documentary film by Bimal Roy, Swami Vivekananda (1998) by G. V. Iyer, Swamiji (2012) laser light film by Manick Sorcar.[216] Sound of Joy, an Indian 3D-animated short film directed by Sukankan Roy depicts the spiritual journey of Vivekananda. It won the National Film Award for Best Non-Feature Animation Film in 2014.[217]
-
-                            Works
-                            Main article: Bibliography of Swami Vivekananda
-                            Lectures from Colombo to Almora front cover 1897 edition
-                            Lectures from Colombo to Almora front cover 1897 edition
-                            Vedanta Philosophy An address before the Graduate Philosophical Society 1901 cover page
-                            Vedanta Philosophy An address before the Graduate Philosophical Society 1901 cover page
-                            Lectures
-                            Although Vivekananda was a powerful orator and writer in English and Bengali,[218] he was not a thorough scholar,[219] and most of his published works were compiled from lectures given around the world which were "mainly delivered [...] impromptu and with little preparation".[219] His main work, Raja Yoga, consists of talks he delivered in New York.[220]
-
-                            Literary works
-                            According to Banhatti, "[a] singer, a painter, a wonderful master of language and a poet, Vivekananda was a complete artist",[221] composing many songs and poems, including his favourite,[citation needed] "Kali the Mother". Vivekananda blended humour with his teachings, and his language was lucid. His Bengali writings testify to his belief that words (spoken or written) should clarify ideas, rather than demonstrating the speaker (or writer's) knowledge.[citation needed]
-
                             Bartaman Bharat meaning "Present Day India"[222] is an erudite Bengali language essay written by him, which was first published in the March 1899 issue of Udbodhan, the only Bengali language magazine of Ramakrishna Math and Ramakrishna Mission. The essay was reprinted as a book in 1905 and later compiled into the fourth volume of The Complete Works of Swami Vivekananda.[223] [224]In this essay his refrain to the readers was to honour and treat every Indian as a brother irrespective of whether he was born poor or in lower caste.[225]`;
                 }
                 function getMainPage(){
                   hideWork();
                     document.getElementById("intro").innerHTML = `Cave 26 of the rock-cut Ajanta Caves
-In the late Vedic period, around the 6th century BCE, the small states and chiefdoms of the Ganges Plain and the north-western regions had consolidated into 16 major oligarchies and monarchies that were known as the mahajanapadas.[91][92] The emerging urbanisation gave rise to non-Vedic religious movements, two of which became independent religions. Jainism came into prominence during the life of its exemplar, Mahavira.[93] Buddhism, based on the teachings of Gautama Buddha, attracted followers from all social classes excepting the middle class; chronicling the life of the Buddha was central to the beginnings of recorded history in India.[94][95][96] In an age of increasing urban wealth, both religions held up renunciation as an ideal,[97] and both established long-lasting monastic traditions. Politically, by the 3rd century BCE, the kingdom of Magadha had annexed or reduced other states to emerge as the Mauryan Empire.[98] The empire was once thought to have controlled most of the subcontinent except the far south, but its core regions are now thought to have been separated by large autonomous areas.[99][100] The Mauryan kings are known as much for their empire-building and determined management of public life as for Ashoka's renunciation of militarism and far-flung advocacy of the Buddhist dhamma.[101][102]</br>
-The Sangam literature of the Tamil language reveals that, between 200 BCE and 200 CE, the southern peninsula was ruled by the Cheras, the Cholas, and the Pandyas, dynasties that traded extensively with the Roman Empire and with West and South-East Asia.[103][104] In North India, Hinduism asserted patriarchal control within the family, leading to increased subordination of women.[105][98] By the 4th and 5th centuries, the Gupta Empire had created a complex system of administration and taxation in the greater Ganges Plain; this system became a model for later Indian kingdoms.[106][107] Under the Guptas, a renewed Hinduism based on devotion, rather than the management of ritual, began to assert itself.[108] This renewal was reflected in a flowering of sculpture and architecture, which found patrons among an urban elite.[107] Classical Sanskrit literature flowered as well, and Indian science, astronomy, medicine, and mathematics made significant advances.[107]
-</br>`;
+                              In the late Vedic period, around the 6th century BCE, the small states and chiefdoms of the Ganges Plain and the north-western regions had consolidated into 16 major oligarchies and monarchies that were known as the mahajanapadas.[91][92] The emerging urbanisation gave rise to non-Vedic religious movements, two of which became independent religions. Jainism came into prominence during the life of its exemplar, Mahavira.[93] Buddhism, based on the teachings of Gautama Buddha, attracted followers from all social classes excepting the middle class; chronicling the life of the Buddha was central to the beginnings of recorded history in India.[94][95][96] In an age of increasing urban wealth, both religions held up renunciation as an ideal,[97] and both established long-lasting monastic traditions. Politically, by the 3rd century BCE, the kingdom of Magadha had annexed or reduced other states to emerge as the Mauryan Empire.[98] The empire was once thought to have controlled most of the subcontinent except the far south, but its core regions are now thought to have been separated by large autonomous areas.[99][100] The Mauryan kings are known as much for their empire-building and determined management of public life as for Ashoka's renunciation of militarism and far-flung advocacy of the Buddhist dhamma.[101][102]</br>
+                              The Sangam literature of the Tamil language reveals that, between 200 BCE and 200 CE, the southern peninsula was ruled by the Cheras, the Cholas, and the Pandyas, dynasties that traded extensively with the Roman Empire and with West and South-East Asia.[103][104] In North India, Hinduism asserted patriarchal control within the family, leading to increased subordination of women.[105][98] By the 4th and 5th centuries, the Gupta Empire had created a complex system of administration and taxation in the greater Ganges Plain; this system became a model for later Indian kingdoms.[106][107] Under the Guptas, a renewed Hinduism based on devotion, rather than the management of ritual, began to assert itself.[108] This renewal was reflected in a flowering of sculpture and architecture, which found patrons among an urban elite.[107] Classical Sanskrit literature flowered as well, and Indian science, astronomy, medicine, and mathematics made significant advances.[107]
+                              </br>`;
                 }
             </script>
             <div style="display: flex; flex-direction: column;">

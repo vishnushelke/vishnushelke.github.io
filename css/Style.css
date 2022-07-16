@@ -1,5 +1,29 @@
-html{
+html {
   scroll-behavior: smooth;
+}
+.mainSlideShowAndTextDiv {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 160px;
+  width: 85%;
+}
+.mainSlideShowImages {
+  width: 50%;
+  position: relative;
+  height: 300;
+}
+.mainSlides {
+  float: left;
+  width: 100%;
+  height: 300;
+}
+.mainSlideShowButtons {
+  position: absolute;
+}
+.mainImageText {
+  width: 45%;
+  background-color: rgb(149, 200, 212);
+  padding-left: 2%;
 }
 /* Slideshow container */
 .slideshow-container {
@@ -9,8 +33,8 @@ html{
   padding-top: 130px;
   /* margin: auto; */
 }
-.dotsClass{
-  text-align:center;
+.dotsClass {
+  text-align: center;
 }
 .image {
   width: 40%;
@@ -110,7 +134,6 @@ html{
   top: 0;
   right: 0;
   z-index: 1;
-  
 }
 
 .footer {
@@ -138,7 +161,7 @@ html{
   display: inline-block;
   font-size: 12px;
 }
-button:hover{
+button:hover {
   background-color: white;
   color: darkblue;
 }
@@ -196,7 +219,7 @@ button:hover{
   position: fixed;
   top: 100px;
   left: 0px;
-  background-color: rgb(152, 223, 223);;
+  background-color: rgb(152, 223, 223);
   z-index: 1;
   padding-left: 6%;
 }
@@ -211,7 +234,6 @@ button:hover{
   top: -7%; */
 }
 
-
 @media screen and (max-width: 1024px) {
   .headerText {
     font-size: 20px;
@@ -224,7 +246,7 @@ button:hover{
   }
   .header {
     display: flex;
-    height: 20px;
+    height: 50px;
     justify-content: space-between;
   }
   .button {
@@ -244,8 +266,8 @@ button:hover{
     height: 25px;
   }
   .logoImage {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     padding-left: 5px;
   }
   .headerTextText {
@@ -258,7 +280,7 @@ button:hover{
     text-align: left;
     align-self: center;
     color: black;
-    font-size: 8px;
+    font-size: 5px;
     /* width: 184px; */
   }
   .indexLink {
@@ -269,8 +291,9 @@ button:hover{
     justify-content: space-around;
     height: fit-content;
     position: fixed;
-    top: 20px;
+    top: 50px;
     left: 0;
+    padding-left: 3%;
   }
 
   .slideshow-container {
