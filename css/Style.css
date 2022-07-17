@@ -241,9 +241,6 @@ button:hover {
   .headerText {
     font-size: 20px;
   }
-  .slideshow-container{
-    padding-top: 10px;
-  }
 }
 
 @media screen and (max-width: 676px) {
@@ -257,7 +254,7 @@ button:hover {
   }
   .button {
     padding: 2px 2px;
-    font-size: 6px;
+    font-size: 9px;
   }
   .footer {
     display: flex;
@@ -278,7 +275,7 @@ button:hover {
   }
   .headerTextText {
     color: black;
-    font-size: 8px;
+    font-size: 12px;
   }
   .contact {
     display: flex;
@@ -299,15 +296,13 @@ button:hover {
     position: fixed;
     top: 50px;
     left: 0;
-    padding-left: 3%;
+    padding-left: 2%;
   }
 
   .slideshow-container {
     max-width: 100%;
     align-self: center;
-    /* position: fixed; */
     padding-top: 30px;
-    /* margin: auto; */
   }
   .prev,
   .next {
@@ -328,19 +323,24 @@ button:hover {
   .mainSlideShowImages{
     width: 90%;
     position: relative;
-    height: 175px;
+    height: 220px;
   }
   .mainSlides{
-    height: 150px;
+    height: 200px;
   }
   .mainImageText{
     width: 90%;
+    font-size: 13px;
   }
   .slideshow-container{
     padding-top: 5px;
   }
   .slidingText{
     padding-top: 60px;
+    font-size: 13px;
+  }
+  .info{
+    font-size: 13px;
   }
 }
 
